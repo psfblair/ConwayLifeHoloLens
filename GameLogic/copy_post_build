@@ -1,0 +1,26 @@
+#!/bin/sh
+
+MY_DIR=`dirname $0`
+
+# Set REMOTE_PLUGINS_DIR in copy_post_build_config.sh if you have a second directory
+# to which you want to copy the dlls (besides the Assets/Plugins directory).
+if [ -x "$MY_DIR/copy_post_build_config.sh" ]
+then source "$MY_DIR/copy_post_build_config.sh"
+fi
+
+TARGET_DIR="$1"
+TARGET_FILE="$2"
+
+LOCAL_PLUGINS_DIR="$MY_DIR/../Assets/Plugins"
+
+cp -v "$TARGET_FILE" "$LOCAL_PLUGINS_DIR"
+cp -v "$TARGET_DIR/FSharp.Core.dll" "$LOCAL_PLUGINS_DIR" 
+
+
+if [ -d "$REMOTE_PLUGINS_DIR" ]
+then
+    cp -v "$TARGET_FILE" "$REMOTE_PLUGINS_DIR"
+    cp -v "$TARGET_DIR/FSharp.Core.dll" "$REMOTE_PLUGINS_DIR"
+else
+    echo "Remote plugin directory not mounted."
+fi
