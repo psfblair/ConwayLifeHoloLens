@@ -24,4 +24,4 @@ shift
 goto loop1
 :after_loop
 
-"%UNITY_EXECUTABLE%" -batchmode -quit -projectPath %MY_DIR% -executeMethod Autobuild.Build %SCENES_TO_BUILD%
+"%UNITY_EXECUTABLE%" -batchmode -quit -projectPath %MY_DIR% --logFile "%MY_DIR%\build.log -executeMethod Autobuild.Build %SCENES_TO_BUILD%
