@@ -9,8 +9,17 @@ cd %~dp0
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
 REM First comnand line argument
-SET UNITY_FOLDER="%~f1"
-REM Get all but first command line argument 
-for /f "tokens=1,* delims= " %%a in ("%*") do set SCENES_TO_BUILD=%%b
+SET UNITY_EXECUTABLE=%1"\Editor\Unity.exe"
 
-"%UNITY_FOLDER%" -batchmode -quit -projectPath %~dp0 -executeMethod Autobuild.Build %SCENES_TO_BUILD%
+REM Get all but first command line argument 
+@echo off
+set SCENES_TO_BUILD=
+shift
+:loop1
+if "%1"=="" goto after_loop
+set SCENES_TO_BUILD=%SCENES_TO_BUILD% %1
+shift
+goto loop1
+:after_loop
+
+"%UNITY_EXECUTABLE%" -batchmode -quit -projectPath %~dp0 -executeMethod Autobuild.Build %SCENES_TO_BUILD%
