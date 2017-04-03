@@ -9,10 +9,10 @@ cd %~dp0
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
 REM First comnand line argument
-SET UNITY_EXECUTABLE=%1"\Editor\Unity.exe"
+SET UNITY_EXECUTABLE="%1\Editor\Unity.exe"
 
 REM Get all but first command line argument 
-@echo off
+REM @echo off
 set SCENES_TO_BUILD=
 shift
 :loop1
@@ -21,5 +21,6 @@ set SCENES_TO_BUILD=%SCENES_TO_BUILD% %1
 shift
 goto loop1
 :after_loop
+REM @echo on
 
 "%UNITY_EXECUTABLE%" -batchmode -quit -projectPath %~dp0 -executeMethod Autobuild.Build %SCENES_TO_BUILD%
