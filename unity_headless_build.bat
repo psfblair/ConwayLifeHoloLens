@@ -4,8 +4,9 @@ REM Remaining command line arguments represent scenes to build, e.g.,
 REM        Assets/Intro.unity Assets/ConwayLife.unity 
 
 SET OUTPUT_DIR=App
+SET MY_DIR=%~dp0
 
-cd %~dp0
+cd %MY_DIR%
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
 REM First comnand line argument
@@ -23,4 +24,4 @@ shift
 goto loop1
 :after_loop
 
-"%UNITY_EXECUTABLE%" -batchmode -quit -projectPath %~dp0 -executeMethod Autobuild.Build %SCENES_TO_BUILD%
+"%UNITY_EXECUTABLE%" -batchmode -quit -projectPath %MY_DIR% -executeMethod Autobuild.Build %SCENES_TO_BUILD%
