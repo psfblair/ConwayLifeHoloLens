@@ -9,7 +9,7 @@ cd %~dp0
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
 REM First comnand line argument
-SET UNITY_EXECUTABLE="%1\Editor\Unity.exe"
+SET UNITY_EXECUTABLE=%~fp1\Editor\Unity.exe
 REM Strip quotes
 SET UNITY_EXECUTABLE=%UNITY_EXECUTABLE:""=%
 
