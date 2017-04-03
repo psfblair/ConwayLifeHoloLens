@@ -9,7 +9,7 @@ cd %~dp0
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
 REM First comnand line argument
-SET UNITY_FOLDER=%~f1
+SET UNITY_FOLDER="%~f1"
 REM Get all but first command line argument 
 for /f "tokens=1,* delims= " %%a in ("%*") do set SCENES_TO_BUILD=%%b
 
