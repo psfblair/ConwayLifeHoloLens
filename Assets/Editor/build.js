@@ -14,7 +14,7 @@ class Autobuild {
         var scenes = new List.<String>();
         var isAfterAutobuild = false;
         
-        for (i=1; i < commandLineArgs.length; i++) {
+        for (var i=1; i < commandLineArgs.length; i++) {
             if (isAfterAutobuild) {
                 scenes.Add(commandLineArgs[i]);
             }

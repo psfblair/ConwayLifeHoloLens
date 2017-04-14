@@ -6,7 +6,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ConwayLife</RootNamespace>
     <AssemblyName>ConwayLife</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,11 +52,9 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>..\..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\UnityHoloLens\Runtime\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\4.8.0\lib\mono\2.0-api\mscorlib.dll</HintPath>
-    </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\3.6.0\lib\mono\gac\FSharp.Core\2.3.0.0__b03f5f7f11d50a3a\FSharp.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\4.8.0\lib\mono\fsharp\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
