@@ -1,3 +1,6 @@
+#Allow the solution file
+!*.sln
+
 #Autosave files
 *~
 
