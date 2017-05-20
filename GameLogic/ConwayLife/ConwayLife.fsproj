@@ -1,12 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47D6BB18-A34C-42CE-94AD-82DA4E0F40F9}</ProjectGuid>
+    <ProjectGuid>{D74919B7-0120-47B0-BB1E-0904E2713187}</ProjectGuid>
+    <TargetProfile>netcore</TargetProfile>
+    <TargetFSharpCoreVersion>3.78.3.1</TargetFSharpCoreVersion>
     <OutputType>Library</OutputType>
     <RootNamespace>ConwayLife</RootNamespace>
     <AssemblyName>ConwayLife</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -15,7 +20,6 @@
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <ConsolePause>false</ConsolePause>
     <PlatformTarget></PlatformTarget>
     <CustomCommands>
       <CustomCommands>
@@ -32,15 +36,8 @@
     <OutputPath>bin\Release</OutputPath>
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <ConsolePause>false</ConsolePause>
     <GenerateTailCalls>true</GenerateTailCalls>
     <PlatformTarget></PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup>
-    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(VisualStudioVersion)' == '10.0' OR '$(VisualStudioVersion)' == '11.0'">
-    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -51,16 +48,18 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>..\..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\UnityHoloLens\Runtime\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>    
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\4.8.0\lib\mono\fsharp\FSharp.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\FSharp.Core.4.1.17\lib\portable-net45+netcore45+wp8\FSharp.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
     <Folder Include="Unity\" />
-  </ItemGroup>
+  </ItemGroup>  
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Core\Life.fs" />
@@ -68,6 +67,7 @@
     <Compile Include="Core\Game.fs" />
     <Compile Include="Unity\UnityLifeUI.fs" />
     <Compile Include="Unity\GameController.fs" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="$(FSharpTargetsPath)" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.Portable.FSharp.Targets" />
 </Project>

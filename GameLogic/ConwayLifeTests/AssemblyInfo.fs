@@ -1,13 +1,13 @@
-﻿namespace ConwayLife
+﻿namespace ConwayLifeTests
 open System.Reflection
 open System.Runtime.CompilerServices
 
-[<assembly: AssemblyTitle("ConwayLife")>]
+[<assembly: AssemblyTitle("ConwayLifeTests")>]
 [<assembly: AssemblyDescription("")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
 [<assembly: AssemblyProduct("")>]
-[<assembly: AssemblyCopyright("paulblair")>]
+[<assembly: AssemblyCopyright("${AuthorCopyright}")>]
 [<assembly: AssemblyTrademark("")>]
 
 // The assembly version has the format {Major}.{Minor}.{Build}.{Revision}

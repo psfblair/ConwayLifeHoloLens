@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4F6EA726-109E-44A5-872B-B1ACC15DFF16}</ProjectGuid>
+    <ProjectGuid>{83397066-0098-409E-9006-D2B8DFD26340}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>ConwayLifeTests</RootNamespace>
     <AssemblyName>ConwayLifeTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,27 +33,32 @@
     <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core">
-      <HintPath>..\packages\FSharp.Core.4.0.0.1\lib\net40\FSharp.Core.dll</HintPath>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.1.17\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unquote">
-      <HintPath>..\packages\Unquote.3.1.2\lib\net45\Unquote.dll</HintPath>
+      <HintPath>..\packages\Unquote.3.2.0\lib\net45\Unquote.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
     <None Include="packages.config" />
-    <Compile Include="Core\LifeTests.fs" />
     <Compile Include="Core\GameTests.fs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
+    <Compile Include="Core\LifeTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConwayLife\ConwayLife.fsproj">
-      <Project>{47D6BB18-A34C-42CE-94AD-82DA4E0F40F9}</Project>
+      <Project>{D74919B7-0120-47B0-BB1E-0904E2713187}</Project>
       <Name>ConwayLife</Name>
     </ProjectReference>
   </ItemGroup>
